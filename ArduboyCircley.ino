@@ -1,9 +1,4 @@
-#include <SPI.h>
-#include <EEPROM.h>
 #include <Arduboy.h>
-
-#define WIDTH (128)
-#define HEIGHT (64)
 
 Arduboy arduboy;
 
@@ -14,7 +9,7 @@ int refX = WIDTH / 2;
 int refY = HEIGHT / 2;
 
 void setup() {
-  arduboy.start();
+  arduboy.begin();
   arduboy.setFrameRate(60);
 }
 
@@ -33,7 +28,7 @@ void loop() {
 
 void draw(uint32_t count) {
     // Clear all the pixels, which essentially sets everything to black.
-    arduboy.clearDisplay();
+    arduboy.clear();
     
     // Loop through each pixel, and do a calculation. Depending on the result we'll set some pixels to white
     for (int x = 0; x < WIDTH; x ++) {
